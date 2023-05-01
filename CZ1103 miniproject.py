@@ -7,10 +7,6 @@ import queue
 
 #read data
 df=pd.read_csv("SPY_2016_2021.csv")
-long_SSMA = queue.Queue()
-short_SSMA = queue.Queue()
-long_EMA = queue.Queue()
-short_EMA = queue.Queue()
 print(df)
 
 capital = 100,000
@@ -27,3 +23,22 @@ while INPUT_SSMAorEMA != -1:
                     longssma=longssma+df[t-1]
                     queue.put(longssma)
                     print(longssma)
+        def shortSSMA(ts, T_short, i):
+            ts = df[i]
+            T_short=12
+            for i in range(0, len(df)+1):
+                for i in df[ts-T_short,ts):
+                    shortssma = df[ts]+df[ts-1]
+                    shortssma=shortssma+df[t-1]
+                    queue.put(shortssma)
+                    print(shortssma)
+    elif INPUT_SSMAorEMA == 2: 
+        def longEMA(te,T):
+            t=df[i]
+            T=26
+            k = 2/(T+1)
+            for i in range(0,len(df)+1):
+                 for i in dataframe[t-T,t]:
+                    
+                            
+            
